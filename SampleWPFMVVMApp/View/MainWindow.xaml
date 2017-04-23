@@ -61,6 +61,8 @@
             <ComboBox  Name="comboName" Height="25" Width="100" VerticalAlignment="Top" HorizontalAlignment="Left" ItemsSource="{Binding Employees}" DisplayMemberPath="FirstName" SelectedItem="{Binding SelectedItem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
             </ComboBox>
             <Label DataContext="{Binding SelectedItem}" Content="{Binding FirstName}"></Label>
+            <TextBox Text="{Binding Test, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+            <TextBox Text="{Binding Test, UpdateSourceTrigger=PropertyChanged}"></TextBox>
         </StackPanel>
     </Grid>
 </Window>

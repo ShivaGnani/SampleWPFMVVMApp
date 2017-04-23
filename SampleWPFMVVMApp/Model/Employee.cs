@@ -7,9 +7,8 @@ using System.ComponentModel;
 
 namespace SampleWPFMVVMApp.Model
 {
-    public class Employee : INotifyPropertyChanged, IDataErrorInfo
+    public class Employee : IDataErrorInfo
     {
-        //private string _fullName;
         private string _firstName;
         private string _lastName;
         public string FirstName
@@ -21,7 +20,6 @@ namespace SampleWPFMVVMApp.Model
             set
             {
                 _firstName = value;
-                //RaisePropertyChanged("FirstName");
             }
         }
         public string LastName
@@ -33,7 +31,6 @@ namespace SampleWPFMVVMApp.Model
             set
             {
                 _lastName = value;
-                //RaisePropertyChanged("LastName");
             }
         }
 
@@ -44,14 +41,6 @@ namespace SampleWPFMVVMApp.Model
             {
                 return _firstName + " " + _lastName;
             }
-            //set
-            //{
-            //    if (_fullName != value)
-            //    {
-            //        _fullName = value;
-            //        RaisePropertyChanged("FullName");
-            //    }
-            //}
         }
 
         private double _salary;
@@ -96,11 +85,5 @@ namespace SampleWPFMVVMApp.Model
                 return result;
             }
         }
-        private void RaisePropertyChanged(string property)
-        {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(property));
-        }
-        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

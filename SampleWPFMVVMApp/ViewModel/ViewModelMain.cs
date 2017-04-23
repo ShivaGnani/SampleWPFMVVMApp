@@ -34,7 +34,7 @@ namespace SampleWPFMVVMApp.ViewModel
             set
             {
                 _employee = value;
-                RaisePropertyChanged("Employee");
+                //  RaisePropertyChanged("Employee");
             }
         }
 
@@ -53,16 +53,28 @@ namespace SampleWPFMVVMApp.ViewModel
             }
         }
 
+        private string _test;
+
+        public string Test
+        {
+            get { return _test; }
+            set
+            {
+                _test = value;
+                RaisePropertyChanged("Test");
+            }
+        }
+
 
         public ViewModelMain()
         {
             Employee = new Employee();
             Employees = new ObservableCollection<Employee>();
-            Employees.Add(new Employee() { FirstName= "Tom", LastName= "Hanks", Salary= 12 });
+            Employees.Add(new Employee() { FirstName = "Tom", LastName = "Hanks", Salary = 12 });
             Employees.Add(new Employee() { FirstName = "Leonardo", LastName = "DeCaprio", Salary = 22 });
             Employees.Add(new Employee() { FirstName = "Robert", LastName = "Downey", Salary = 50 });
             AddEmployeeCommand = new RelayCommand(AddEmployee, CanAddEmployee);
-           // SelectedItem = "Select";
+            SelectedItem = Employees[0];
         }
         private void AddEmployee(object parameter)
         {
