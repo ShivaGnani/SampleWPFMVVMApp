@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using SampleWPFMVVMApp.Model;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 using SampleWPFMVVMApp.Command;
+using System.Threading.Tasks;
+using System;
 
 namespace SampleWPFMVVMApp.ViewModel
 {
@@ -78,6 +75,7 @@ namespace SampleWPFMVVMApp.ViewModel
         }
         private void AddEmployee(object parameter)
         {
+            Task t = Task.Factory.StartNew(() => this.Test = "new task");
             Employees.Add(Employee);
         }
 
@@ -95,7 +93,5 @@ namespace SampleWPFMVVMApp.ViewModel
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(property));
         }
-
-
     }
 }

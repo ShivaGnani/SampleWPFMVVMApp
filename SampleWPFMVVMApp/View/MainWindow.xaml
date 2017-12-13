@@ -63,6 +63,8 @@
             <Label DataContext="{Binding SelectedItem}" Content="{Binding FirstName}"></Label>
             <TextBox Text="{Binding Test, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
             <TextBox Text="{Binding Test, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+            <TextBox Name="NewTaskTextBox"></TextBox>
+            <Button Click="newTask_Click" Name="newTask">new task</Button>
         </StackPanel>
     </Grid>
 </Window>
